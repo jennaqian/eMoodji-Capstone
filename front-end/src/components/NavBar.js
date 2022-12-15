@@ -26,7 +26,6 @@ export default function NavBar () {
 
     const loggedOutButtons = <>
     <Link to="/loginpage" className="homepage-button nav-button">Log In</Link>
-    {/* <Link to="/createaccount" className="homepage-button nav-button">Create Account</Link>  */}
     </>;
 
     const loggedInButtons = <>

@@ -14,7 +14,6 @@ export default function Step2(props) {
 
     const handleSelectInterest = (e) => {
             setEntry({...entry, interest: e.target.alt});
-            //doesnt need to be here for some reason?
             // setDisabled(false);
     };
 

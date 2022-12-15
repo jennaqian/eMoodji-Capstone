@@ -46,8 +46,9 @@ export default function NewUserForm(){
                 <form onSubmit={handleSubmit} className="new-user-form">
                     <div className="signup-container">
 
-                    <h3 className="signup-heading">We just need a bit of information about you to get your account set up!</h3>
-                    <div>
+                    <h3 className="signup-heading">Just need a bit more info about you!</h3>
+                    <br/>
+                    <div className="signup-name">
                         <input 
                             id = "fname" 
                             value = {fname} 
@@ -56,7 +57,7 @@ export default function NewUserForm(){
                             placeholder = "First Name"
                             required 
                             />
-                    
+                            
                         <input 
                             id = "lname"
                             value = {lname} 
@@ -66,7 +67,7 @@ export default function NewUserForm(){
                             />
                     </div>
 
-                    <div>
+                    <div className="signup-email-pswd">
                         <input 
                             id = "email"
                             value = {email} 
@@ -86,6 +87,7 @@ export default function NewUserForm(){
                             />
                     </div>
 
+                    <br/>
                     <button id='confirm-account-creation' type="Submit" >
                         Create Account
                     </button>

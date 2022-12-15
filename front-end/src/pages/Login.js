@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
 export default function Login(){
+    const [quote, setQuote] = useState([]);
     const [user, setUser] = useState({
         id: null,
         email: "",
@@ -12,6 +13,12 @@ export default function Login(){
     });
     let navigate = useNavigate();
 
+    useEffect(() => {
+        axios("https://type.fit/api/quotes")
+        .then(res => {
+          setQuote(res.data[Math.floor(Math.random() * 50)]);
+        });
+    }, []);
 
     const handleTextChange = (e) => {
         setUser({...user, [e.target.id]: e.target.value})
@@ -37,7 +44,8 @@ export default function Login(){
             <div className="login-container">
 
                 <div className="login-image-container">
-                    <h1>Welcome Back to eMoodjí! 😊</h1>
+                    <h1>"{quote.text}" <br /> </h1>
+                    <h2>{quote.author ? quote.author : "Unknown"}</h2>
                 </div>
 
                 <div className="login-form-container">

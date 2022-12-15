@@ -8,45 +8,18 @@ export default function Home() {
     // const [email, setEmail] = useState('');
     // const [loader, setLoader] = useState(false);
 
-    // const submitEmailSubscription = (e) => {
-
-    // //     // set loader to true
-    //     setLoader(true);
-    //     e.preventDefault();
-
-    // //     const requestParams = {
-    // //         method: 'POST',
-            
-    // //     }
-
-    // //     fetch('https://www.myendpoint.com', requestParams)
-    // //     .then(response => response.json())
-    // //     .then(data => {
-    // //         setLoader(false);
-
-    // //         // replace view with success view
-    // //     }).catch(err => {
-    // //         // set loader to false
-
-    // //         // set an error state
-    // //     })
-
-    // };
-
-
     if (localStorage.getItem("userid")) {
         return <SignedInHomePage />;
     } else {
         return (
         <div className="home">
             <div id="wallpaper">
-                <div style={{ height: "30px" }}></div>
+                <div style={{ height: "50px" }}></div>
                     <section className="home-info">
                         <div className="left-info-box">
                             <h2>
-                            One-stop quick reflections on your well-being! Discover relaxing
-                            activities and events in the <br />
-                            <p>New York Metropolitan Area!</p>
+                            One-stop quick reflections on your well-being! 
+                            Discover relaxing activities and events near you!
                             </h2>
                         </div>
                         <div className="right-info-box">
@@ -64,9 +37,6 @@ export default function Home() {
                             </p>
                         </div>
                     </section>
-                {/* <div className="homepage-bubble">
-                    Practice mindfulness with eMoodjí!
-                </div> */}
 
                 <div className="inHomeBox">
                     <Link to="/wizard">
